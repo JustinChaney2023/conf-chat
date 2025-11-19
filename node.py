@@ -9,7 +9,7 @@ import time
 import os
 from typing import Dict, Any, Tuple, Optional, List
 
-# --------------------------- Global State ---------------------------
+# --------------------------- Global State --------------------------
 
 host: str = "127.0.0.1"
 port: int = 0
