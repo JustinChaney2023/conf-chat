@@ -1,41 +1,4 @@
 #!/usr/bin/env python3
-"""
-conf-chat minimal P2P-style implementation in Python (single file, CLI only).
-
-Design assumptions (keep README in sync with this):
-
-- Each running node is:
-    - A TCP server (listens on host:port)
-    - A CLI client for exactly one logged-in user at a time.
-
-- Each user has a *home node*:
-    - The node where they REGISTERed.
-    - They must LOG IN on that same node (no roaming logins).
-    - The home node stores:
-        - The user's password hash and full name
-        - Their friend list
-        - Incoming friend requests
-        - Their conference membership index
-        - Their offline messages
-
-- Nodes talk directly to each other's home nodes over TCP,
-  exchanging single-line JSON messages.
-
-- Presence:
-    - The home node tracks whether its local user is currently logged in.
-    - Other nodes query presence via CHECK_ONLINE messages.
-
-- Messages:
-    - SEND_DM goes to the recipient's home node.
-    - The home node delivers instantly if the user is logged in,
-      otherwise stores it in offline_messages[username] for later.
-
-- Conferences:
-    - A conference is “hosted” on its creator's home node.
-    - The host node keeps the participant list.
-    - When anyone sends to a conference, the host node fan-outs
-      to each participant's home node as a SEND_DM with a conf_id.
-"""
 
 import argparse
 import json

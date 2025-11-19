@@ -1,0 +1,30 @@
+{
+  "users": {
+    "ob": {
+      "password_hash": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "full_name": "Bob Roger",
+      "home_host": "127.0.0.1",
+      "home_port": 5001,
+      "logged_in": true,
+      "friends": {
+        "justin": {
+          "home_host": "127.0.0.1",
+          "home_port": 5000
+        }
+      },
+      "incoming_requests": {},
+      "conferences": {
+        "conf-1763549871858": {
+          "name": "teamchat",
+          "owner": "justin",
+          "host_host": "127.0.0.1",
+          "host_port": 5000
+        }
+      }
+    }
+  },
+  "offline_messages": {
+    "ob": []
+  },
+  "conferences": {}
+}
